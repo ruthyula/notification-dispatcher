@@ -1,5 +1,7 @@
 # Notification Dispatcher
 
+Application Preview
+
 A modular notification dispatching system built with **TypeScript**. It demonstrates reliable notification delivery through validation, rate limiting, retry handling, idempotency, and an injectable transport layer.
 
 ## Features
