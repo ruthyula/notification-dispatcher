@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Notification Dispatcher</title>
+
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <header>
+      <h1>Notification Dispatcher</h1>
+      <p>Send notifications to your users.</p>
+    </header>
+
+    <form id="notificationForm" novalidate>
+
+      <div class="form-group">
+        <label for="userId">User ID</label>
+        <input
+          type="text"
+          id="userId"
+          name="userId"
+          placeholder="Enter user ID"
+          required
+          aria-describedby="userIdError"
+          aria-invalid="false"
+        >
+        <small class="error" id="userIdError"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="channel">Notification Channel</label>
+
+        <select id="channel" name="channel" aria-describedby="channelError"
+  aria-invalid="false" required>
+          <option value="">Select a channel</option>
+          <option value="email">Email</option>
+          <option value="sms">SMS</option>
+          <option value="push">Push Notification</option>
+        
+        </select>
+
+        <small class="error" id="channelError"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Notification Content</label>
+
+        <textarea
+          id="content"
+          name="content"
+          rows="5"
+          placeholder="Enter your notification message"
+          aria-describedby="idempotencyKeyError"
+          aria-invalid="false"
+           required
+        ></textarea>
+
+        <small class="error" id="contentError"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="idempotencyKey">Idempotency Key</label>
+
+        <input
+          type="text"
+          id="idempotencyKey"
+          name="idempotencyKey"
+          placeholder="Enter a unique notification key"
+          aria-describedby="idempotencyKeyError"
+          aria-invalid="false"
+           required
+        >
+
+        <small class="error" id="idempotencyKeyError"></small>
+      </div>
+
+      <button type="submit">Send Notification</button>
+
+      <p id="formMessage" role="status" aria-live="polite"></p>
+
+    </form>
+
+  </main>
+
+  <script type="module" src="./src/main.ts"></script>
+
+</body>
+</html>
+
